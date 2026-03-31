@@ -107,6 +107,53 @@ def step_verify_karpenter_pods_running(context):
         log_to_file(context.scenario.name, f"Error checking Karpenter pods: {str(e)}")
         raise
 
+@when('I check the Karpenter Controller HA')
+def step_check_karpenter_deployment(context):
+    """Check Karpenter deployment status"""
+    try:
+        # Check Karpenter deployment
+        deployment = run_kubectl("kubectl get deployment -n karpenter -l app.kubernetes.io/name=karpenter -o json")
+        deployment_data = json.loads(deployment)
+        
+        context.karpenter_deployments = len(deployment_data.get('items', []))
+        log_to_file(context.scenario.name, f"Found {context.karpenter_deployments} Karpenter deployments")
+        
+        # Check Karpenter services
+        services = run_kubectl("kubectl get svc -n karpenter -l app.kubernetes.io/name=karpenter -o json")
+        services_data = json.loads(services)
+        
+        context.karpenter_services = len(services_data.get('items', []))
+        log_to_file(context.scenario.name, f"Found {context.karpenter_services} Karpenter services")
+        
+    except Exception as e:
+        log_to_file(context.scenario.name, f"Error checking Karpenter deployment: {str(e)}")
+        raise
+
+@then('Karpenter controller should have pods not less than 2 and in running state')
+def step_verify_karpenter_pods_running(context):
+    """Verify Karpenter controller pods are running"""
+    try:
+        pods = run_kubectl("kubectl get pods -n karpenter -l app.kubernetes.io/name=karpenter -o json")
+        pods_data = json.loads(pods)
+        
+        running_pods = 0
+        not_running_pods = 0
+        
+        for pod in pods_data.get('items', []):
+            status = pod.get('status', {}).get('phase', '')
+            if status == 'Running':
+                running_pods += 1
+            else:
+                not_running_pods += 1
+        
+        log_to_file(context.scenario.name, f"Karpenter controller pods: {running_pods} running, {not_running_pods} not running")
+        assert running_pods > 0, "No Karpenter controller pods are running"
+        assert running_pods >= 2, "Karpenter controller pods are less than 2"
+        
+    except Exception as e:
+        log_to_file(context.scenario.name, f"Error checking Karpenter pods: {str(e)}")
+        raise
+
 @when('I check Karpenter Custom Resource Definitions')
 def step_check_karpenter_crds(context):
     """Check Karpenter CRDs placement"""

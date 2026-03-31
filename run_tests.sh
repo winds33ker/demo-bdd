@@ -2,8 +2,9 @@
 
 # Run BDD tests with runtime parameters
 
-CLUSTER_NAME=${1:-"eks-karpenter-upgrade"}
-REGION=${2:-"us-west-2"}
+CLUSTER_NAME=${1:-"eks-dev-cluster-3"}
+REGION=${2:-"us-east-1"}
+SERVICES=${3:-"eks,argocd"}
 
 echo "Running BDD tests with parameters:"
 echo "  Cluster: $CLUSTER_NAME"
@@ -15,7 +16,7 @@ echo ""
 behave \
   -D cluster_name="$CLUSTER_NAME" \
   -D region="$REGION" \
-  features/
+  features/argocd.feature
 
 # Examples:
 # ./run_tests.sh my-cluster us-east-1 "sqs,s3,lambda"

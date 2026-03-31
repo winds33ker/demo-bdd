@@ -1,0 +1,24 @@
+Running BDD tests with parameters:
+  Cluster: eks-dev-cluster-3
+  Region: us-east-1
+  Services: eks,argocd
+
+USING RUNNER: behave.runner:Runner
+Feature: AWS Services Validation # features/argocd.feature:1
+
+  Scenario Outline: Validate AWS services in different regions -- @1.1   # features/argocd.feature:11
+    Given I fetch AWS services for region "us-east-1"                    # steps/argocd_steps.py:27
+    When I filter for "eks" services                                     # steps/argocd_steps.py:59
+    Then I should find resources for each service                        # steps/argocd_steps.py:77
+    And all services in "eks" should be available                        # steps/argocd_steps.py:82
+
+  Scenario: Validate ArgoCD version is v3.3.2                                                            # features/argocd.feature:13
+    Given I have access to EKS cluster "eks-dev-cluster-3" in region "us-east-1" for services validation # steps/argocd_steps.py:94
+    When I check the ArgoCD controller deployment                                                        # steps/argocd_steps.py:121
+    Then I should validate that ArgoCD version is "v3.3.2"                                               # steps/argocd_steps.py:166
+    And I should verify ArgoCD controller is running and healthy                                         # steps/argocd_steps.py:202
+
+1 feature passed, 0 failed, 0 skipped
+2 scenarios passed, 0 failed, 0 skipped
+8 steps passed, 0 failed, 0 skipped
+Took 0min 3.059s
