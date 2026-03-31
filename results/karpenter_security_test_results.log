@@ -1,0 +1,22 @@
+FEATURE: Karpenter Security Configuration Validation
+Started: 2026-01-14 18:37:11
+================================================================================
+
+
+================================================================================
+SCENARIO: Validate EKS cluster is deployed in private VPC without internet access
+Started: 2026-01-14 18:37:11
+================================================================================
+
+[2026-01-14 18:37:11] Validate EKS cluster is deployed in private VPC without internet access: Connected to cluster eks-karpenter-upgrade in region us-west-2 for security validation
+[2026-01-14 18:37:12] Validate EKS cluster is deployed in private VPC without internet access: EKS cluster VPC ID: vpc-0955971ba6d693809
+[2026-01-14 18:37:12] Validate EKS cluster is deployed in private VPC without internet access: EKS cluster subnets: 3 subnets
+[2026-01-14 18:37:13] Validate EKS cluster is deployed in private VPC without internet access: Internet Gateways attached to VPC: 1
+[2026-01-14 18:37:13] Validate EKS cluster is deployed in private VPC without internet access: NAT Gateways in VPC: 1
+[2026-01-14 18:37:13] Validate EKS cluster is deployed in private VPC without internet access: Private subnet: subnet-01d1ead2e21bb2c45 (10.44.128.0/19)
+[2026-01-14 18:37:13] Validate EKS cluster is deployed in private VPC without internet access: Private subnet: subnet-09f99e30ebd558620 (10.44.160.0/19)
+[2026-01-14 18:37:14] Validate EKS cluster is deployed in private VPC without internet access: Private subnet: subnet-0420342b67e225c08 (10.44.96.0/19)
+[2026-01-14 18:37:14] Validate EKS cluster is deployed in private VPC without internet access: Cluster endpoint - Private access: True
+[2026-01-14 18:37:14] Validate EKS cluster is deployed in private VPC without internet access: Cluster endpoint - Public access: True
+[2026-01-14 18:37:14] Validate EKS cluster is deployed in private VPC without internet access: Public access CIDRs: ['0.0.0.0/0']
+[2026-01-14 18:37:14] Validate EKS cluster is deployed in private VPC without internet access: ✓ EKS cluster has 3 private subnets

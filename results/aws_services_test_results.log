@@ -1,0 +1,57 @@
+================================================================================
+FEATURE: AWS Services Validation
+Started: 2026-01-27 13:57:42
+================================================================================
+
+
+------------------------------------------------------------
+SCENARIO: Validate Karpenter version is 1.5.0
+------------------------------------------------------------
+[2026-01-27 13:57:44] Validate Karpenter version is 1.5.0
+  → Connected to EKS cluster eks-karpenter-upgrade in region us-west-2
+[2026-01-27 13:57:44] Validate Karpenter version is 1.5.0
+  → Checking Karpenter controller deployment...
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Found Karpenter deployment: karpenter
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Namespace: karpenter
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Replicas: 3/3
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Karpenter image: public.ecr.aws/karpenter/controller:1.5.0@sha256:339aef3f5ecdf6f94d1c7cc9d0e1d359c281b4f9b842877bdbf2acd3fa360521
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Validating Karpenter version is 1.5.0...
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Expected version: 1.5.0
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Actual version: 1.5.0
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → ✓ Karpenter version validation passed: 1.5.0
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Verifying Karpenter controller health...
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → Deployment status:
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  →   Total replicas: 3
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  →   Ready replicas: 3
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  →   Available replicas: 3
+[2026-01-27 13:57:45] Validate Karpenter version is 1.5.0
+  → ✓ Karpenter controller is running and healthy
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  →   Pod karpenter-75dbd6c5dd-57l77: Running
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  →     ✓ All containers ready
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  →   Pod karpenter-75dbd6c5dd-5nncl: Running
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  →     ✓ All containers ready
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  →   Pod karpenter-75dbd6c5dd-qgbcw: Running
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  →     ✓ All containers ready
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  → Running and ready pods: 3/3
+[2026-01-27 13:57:46] Validate Karpenter version is 1.5.0
+  → ✓ All Karpenter pods are running and ready

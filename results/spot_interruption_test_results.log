@@ -1,0 +1,320 @@
+SPOT INTERRUPTION TEST RUN
+Started: 2026-01-15 20:26:56
+================================================================================
+
+[2026-01-15 20:26:56] Complete spot interruption lifecycle test
+  → Connected to cluster eks-karpenter-upgrade in region us-west-2
+[2026-01-15 20:26:56] Complete spot interruption lifecycle test
+  → Set namespace to: math-compute-sqs-app
+[2026-01-15 20:26:56] Complete spot interruption lifecycle test
+  → 📬 SQS CONFIGURATION: Set queue name to 'karpenter-eks-karpenter-upgrade'
+[2026-01-15 20:26:57] Complete spot interruption lifecycle test
+  → Found pod: math-compute-sqs-app-5fb9c8bc97-jxcv8
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  → 📋 SPOT INSTANCE VERIFICATION:
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  →   Pod Status: Running
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  →   Node Name: ip-10-44-140-192.us-west-2.compute.internal
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  →   Instance ID: i-017358e9fb24c4842
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  →   Instance State: running
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  →   Instance Lifecycle: spot
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  →   Spot Indicators: instance lifecycle = spot, node labels contain 'spot', instance type: t2.medium, karpenter.sh/capacity-type=spot
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  → ✅ VERIFIED: math-compute-sqs-app is running on spot instance
+[2026-01-15 20:26:59] Complete spot interruption lifecycle test
+  → 📸 CAPTURING INITIAL STATE
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   Initial Pod: math-compute-sqs-app-5fb9c8bc97-jxcv8
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   Initial Node: ip-10-44-140-192.us-west-2.compute.internal
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   Initial Instance: i-017358e9fb24c4842
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → 🔍 STARTING COMPREHENSIVE MONITORING FOR ALL COMPONENTS
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → 🔍 Initializing comprehensive monitoring threads...
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   ✅ Karpenter Logs monitoring thread started
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   ✅ Pod Events monitoring thread started
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → 📱 Monitoring logs from specific Karpenter pod: karpenter-75dbd6c5dd-4csmc
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   ✅ Node Events monitoring thread started
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   ✅ SQS Queue monitoring thread started
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → ✅ Started monitoring logs for pod: karpenter-75dbd6c5dd-4csmc
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → 📱 Starting math-compute-sqs-app monitoring: math-compute-sqs-app-5fb9c8bc97-jxcv8
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  →   ✅ Application Pods monitoring thread started
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → 🔍 All 5 monitoring threads active and ready
+[2026-01-15 20:27:03] Complete spot interruption lifecycle test
+  → ✅ SQS monitoring: Connected to queue karpenter-eks-karpenter-upgrade
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  → 📊 MONITORING STATUS:
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →   Active: ✅ Yes
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →   Active Threads: 5
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →   Components Monitored:
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →     • Karpenter controller logs (SQS, NodeClaim, Spot processing)
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →     • Pod lifecycle events
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →     • Node lifecycle events
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  →     • SQS message processing
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  → ✅ Comprehensive monitoring active and ready
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  → 🧪 TRIGGERING AWS FIS SPOT INTERRUPTION at: 2026-01-15 20:27:04.299290
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  → 🔍 Starting comprehensive monitoring in parallel...
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  → ℹ️ Monitoring already active
+[2026-01-15 20:27:04] Complete spot interruption lifecycle test
+  → ⚠️ Karpenter pod karpenter-75dbd6c5dd-4csmc process terminated
+[2026-01-15 20:27:06] Complete spot interruption lifecycle test
+  → 🚀 Creating FIS experiment template...
+[2026-01-15 20:27:06] Complete spot interruption lifecycle test
+  → 🧪 FIS: Creating experiment template
+[2026-01-15 20:27:06] Complete spot interruption lifecycle test
+  →   Target Instance: i-017358e9fb24c4842
+[2026-01-15 20:27:06] Complete spot interruption lifecycle test
+  →   Grace Period: 2 minutes
+[2026-01-15 20:27:07] Complete spot interruption lifecycle test
+  →   ✅ Template Created: EXT238u2hKzjgWK2
+[2026-01-15 20:27:07] Complete spot interruption lifecycle test
+  → 🚀 Starting FIS experiment...
+[2026-01-15 20:27:07] Complete spot interruption lifecycle test
+  → 🚀 FIS: Starting spot interruption experiment
+[2026-01-15 20:27:07] Complete spot interruption lifecycle test
+  →   Template ID: EXT238u2hKzjgWK2
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  →   ✅ Experiment Started: EXPW1ijMvjBu8sgtre
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  →   Initial State: initiating
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → ✅ FIS experiment started: EXPW1ijMvjBu8sgtre
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → ✅ All monitoring threads active and capturing events
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → 🔍 VALIDATING COMPLETE SPOT INTERRUPTION LIFECYCLE
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → ============================================================
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → 🔍 Monitoring complete lifecycle: EventBridge → SQS → Karpenter → Node → Pod
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → 📋 Starting comprehensive Karpenter controller log capture...
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → 📡 MONITORING EVENTBRIDGE RULE ACTIVITY
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → 🔍 Checking EventBridge rule: Karpenter-SpotInterrupt-20251103180522556700000020
+[2026-01-15 20:27:08] Complete spot interruption lifecycle test
+  → ⏰ Monitoring started at: 20:27:08.699
+[2026-01-15 20:27:09] Complete spot interruption lifecycle test
+  → 📊 Baseline matched events: 0
+[2026-01-15 20:27:09] Complete spot interruption lifecycle test
+  →   Monitoring EventBridge... +1s (matches: 0)
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  → 🗑️ SQS: Message DELETED/PROCESSED
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  →   Message ID: 19fae05b-efb6-41da-99bd-816efc7f0417
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  →   Processing time: 5.33s
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  →   Deleted at: 20:27:31.149
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  → 🗑️ SQS: Message DELETED/PROCESSED
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  →   Message ID: 6b36c788-28cb-4f3e-a70f-70017f3d5655
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  →   Processing time: 5.33s
+[2026-01-15 20:27:31] Complete spot interruption lifecycle test
+  →   Deleted at: 20:27:31.149
+[2026-01-15 20:27:41] Complete spot interruption lifecycle test
+  →   Monitoring EventBridge... +33s (matches: 0)
+[2026-01-15 20:27:55] Complete spot interruption lifecycle test
+  → 🗑️ SQS: Message DELETED/PROCESSED
+[2026-01-15 20:27:55] Complete spot interruption lifecycle test
+  →   Message ID: 491b8484-42dc-49cd-b60e-72e30945077c
+[2026-01-15 20:27:55] Complete spot interruption lifecycle test
+  →   Processing time: 4.45s
+[2026-01-15 20:27:55] Complete spot interruption lifecycle test
+  →   Deleted at: 20:27:55.799
+[2026-01-15 20:28:13] Complete spot interruption lifecycle test
+  →   Monitoring EventBridge... +64s (matches: 0)
+[2026-01-15 20:30:09] Complete spot interruption lifecycle test
+  →   Monitoring EventBridge... +181s (matches: 0)
+[2026-01-15 20:30:41] Complete spot interruption lifecycle test
+  →   Monitoring EventBridge... +213s (matches: 0)
+[2026-01-15 20:31:13] Complete spot interruption lifecycle test
+  →   Monitoring EventBridge... +245s (matches: 0)
+[2026-01-15 20:32:16] Complete spot interruption lifecycle test
+  → ⚠️ No EventBridge events detected within 300s timeout
+[2026-01-15 20:32:41] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+333s)
+[2026-01-15 20:33:11] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+363s)
+[2026-01-15 20:33:41] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+393s)
+[2026-01-15 20:34:11] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+423s)
+[2026-01-15 20:34:41] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+453s)
+[2026-01-15 20:35:11] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+483s)
+[2026-01-15 20:35:41] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+513s)
+[2026-01-15 20:36:11] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+543s)
+[2026-01-15 20:36:41] Complete spot interruption lifecycle test
+  → 📊 Lifecycle Progress: 0/5 steps complete (+573s)
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📋 COMPREHENSIVE KARPENTER CONTROLLER LOGS
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ==================================================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ❌ Error capturing Karpenter logs: name 'step_capture_karpenter_logs' is not defined
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ⏱️ COMPLETE LIFECYCLE TIMING ANALYSIS
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → =============================================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📋 COMPLETE LIFECYCLE VALIDATION SUMMARY
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → =============================================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   EventBridge Event Capture: ❌ FAIL
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   SQS Message Processing: ❌ FAIL
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   Karpenter Message Receipt: ❌ FAIL
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   New Node Creation: ❌ FAIL
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   New Pod Launch & Ready: ❌ FAIL
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ⚠️ PARTIAL: 0/5 lifecycle steps completed
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ⏱️ ANALYZING TIMING DELAYS AND TOTAL PROCESSING TIME
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📅 FIS Start: 20:27:04.299
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📅 First SQS Message: 20:27:25.820
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📊 TIMING SUMMARY
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ==============================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 🎯 TOTAL END-TO-END TIME: 21.52s
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📈 Latest Event: 20:27:25.820
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ✅ EXCELLENT: Processing completed in under 30 seconds
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 🔄 FINAL REPLACEMENT TIMING
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ==================================================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📬 SQS MESSAGE PROCESSING DETAILS
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   Total SQS messages captured: 6
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   Message 1: 20:27:25.820
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →     Type: Unknown
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   Message 2: 20:27:25.820
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →     Type: Unknown
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →   Message 3: 20:27:31.149
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  →     Type: Unknown
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📋 DETAILED KARPENTER CONTROLLER LOGS BY EVENT
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ============================================================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📱 APPLICATION POD CONTAINER LOGS
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → ========================================
+[2026-01-15 20:37:11] Complete spot interruption lifecycle test
+  → 📝 Fallback: Using kubectl logs (real-time monitoring may have missed some logs)
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → 📝 No application logs captured during interruption
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → 
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → ⏰ EVENT TIMELINE SUMMARY
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → ==============================
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → 🧹 CLEANING UP TEST RESOURCES
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → ⏹️ Stopping comprehensive monitoring...
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → 📊 Math-compute-sqs-app monitoring summary:
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  →   Total application logs captured: 0
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  →   Math computation active: ❌
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  →   SQS processing active: ❌
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  → 📊 Application monitoring summary:
+[2026-01-15 20:37:13] Complete spot interruption lifecycle test
+  →   Total application logs captured: 0
+[2026-01-15 20:37:15] Complete spot interruption lifecycle test
+  → ⚠️ Thread did not stop gracefully
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  → ⏹️ Stopped 4 monitoring threads
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  → 📊 Monitoring summary: 25268 total events captured
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  →   - Karpenter logs: 0
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  →   - Pod events: 23233
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  →   - Node events: 2029
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  →   - SQS messages: 6
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  → 🧹 FIS: Cleaning up experiment template
+[2026-01-15 20:37:16] Complete spot interruption lifecycle test
+  →   Template ID: EXT238u2hKzjgWK2
+[2026-01-15 20:37:17] Complete spot interruption lifecycle test
+  →   ✅ Template deleted successfully
+[2026-01-15 20:37:17] Complete spot interruption lifecycle test
+  → ✅ Test cleanup complete
